@@ -15,3 +15,10 @@ function remove(str) {
 bands.sort((a,b)=>{
 	return remove(a)-remove(b)? 1:-1;
 });
+
+const bandList = document.getElementById('band');
+bands.forEach(band=>{
+	const listitem=document.createElement("li")
+	listitem.textContent=band;
+	bandlist.append(listitem)
+})
