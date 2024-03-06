@@ -19,6 +19,6 @@ bands.sort((a,b)=>{
 const bandList = document.getElementById('band');
 bands.forEach(band=>{
 	const listitem=document.createElement("li")
-	listitem.textContent=band;
+	listitem.textContent=band();
 	bandlist.append(listitem)
 })
