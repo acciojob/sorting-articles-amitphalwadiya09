@@ -1,16 +1,15 @@
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
 function remove(str) {
-  // Use a regular expression to replace specified prefixes
-  return str.replace(/^(the|a|an)\s+/i, '').trim();
+  let newstr = str.replace(/the |The |a |A |an |An /g, '').trim();
+  return newstr;
 }
 
 bands.sort((a, b) => {
-  // Use localeCompare for string comparison
   return remove(a).localeCompare(remove(b));
 });
 
-const bandList = document.getElementById('bands');
+const bandList = document.getElementById('band');
 bands.forEach(band => {
   const listItem = document.createElement("li");
   listItem.textContent = band;
